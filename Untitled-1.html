@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta Especial</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+        .container {
+            margin: 20px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .question {
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        button#yes {
+            background-color: #4caf50;
+            color: white;
+        }
+        button#no {
+            background-color: #f44336;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://via.placeholder.com/300" alt="Imagen tierna">
+        <div class="question">¿ME PERDONAS?</div>
+        <div class="buttons">
+            <button id="yes" onclick="handleYes()">Sí</button>
+            <button id="no" onclick="handleNo()">No</button>
+        </div>
+        <div id="message" class="hidden">
+            Te amo mucho Denisse, no me gusta estar así contigo, te amo mucho, te veo en la tarde en la casa para comer y estar juntos.
+        </div>
+    </div>
+    <script>
+        function handleYes() {
+            document.getElementById('message').classList.remove('hidden');
+            document.getElementById('yes').style.transform = 'scale(1.2)';
+            document.getElementById('no').style.transform = 'scale(0.8)';
+        }
+
+        function handleNo() {
+            document.getElementById('no').style.transform = 'scale(0.8)';
+            document.getElementById('yes').style.transform = 'scale(1.2)';
+        }
+    </script>
+</body>
+</html>
